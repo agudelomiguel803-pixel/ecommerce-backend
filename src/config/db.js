@@ -1,12 +1,11 @@
-require("dotenv").config();
 const mysql = require("mysql2/promise");
 
 const db = mysql.createPool({
-  host: "nozomi.proxy.rlwy.net",
-  user: "root",
-  password: "YgZYxnEAWoalYveqSROGTexnHmohDOrr",
-  database: "railway",
-  port: 22709,
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
 });
 
 module.exports = db;
